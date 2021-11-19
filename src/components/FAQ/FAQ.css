@@ -1,0 +1,59 @@
+.arrow {
+  position: absolute;
+  right: 10px;
+  top: 25px;
+  width: 40px;
+  fill: #e4640b;
+  transform: rotate(0deg);
+  transition: transform 0.5s;
+}
+.arrow.active {
+  transform: rotate(90deg);
+}
+.minus {
+  display: none;
+}
+.faq-component h1 {
+  color: white;
+  margin-top: 100px;
+  font-size: 48px;
+}
+.minus.active {
+  display: block;
+}
+.question-styles {
+  font-size: 16px !important;
+  font-weight: 700 !important;
+}
+
+.accordion-wrpper {
+  width: 1110px;
+  margin: 0 auto;
+}
+
+.MuiTypography-root {
+  font-size: 16px !important;
+}
+@media screen and (max-width: 1200px) {
+  .accordion-wrpper {
+    width: 930px;
+  }
+}
+@media screen and (max-width: 990px) {
+  .accordion-wrpper {
+    width: 690px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .accordion-wrpper {
+    width: 510px;
+  }
+  .arrow {
+    width: 20px;
+  }
+}
+@media screen and (max-width: 576px) {
+  .accordion-wrpper {
+    width: 90%;
+  }
+}

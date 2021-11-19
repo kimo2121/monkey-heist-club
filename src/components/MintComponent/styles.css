@@ -1,0 +1,37 @@
+.mint-container {
+  background-image: url(/src/assets/image811.png);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 570px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  color: white;
+  margin-top: 100px;
+}
+.mint-container p {
+  font-size: 14px;
+  margin-top: 0;
+}
+.mint-container h1 {
+  font-size: 53px;
+  margin-bottom: 0;
+}
+@media screen and (max-width: 990px) {
+  .mint-container {
+    margin-top: 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .mint-container p {
+    width: 70%;
+    margin: 10px auto;
+  }
+}
+@media screen and (max-width: 576px) {
+  .mint-container h1 {
+    font-size: 36px;
+  }
+}

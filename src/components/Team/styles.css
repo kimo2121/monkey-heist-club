@@ -1,0 +1,67 @@
+.team {
+  background-image: url(/src/assets/backgroundbanana-min.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  min-height: 855px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  box-sizing: border-box;
+}
+.members {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.team h1 {
+  font-size: 72px;
+  color: white;
+  margin-top: 0;
+}
+.member {
+  padding: 30px;
+  margin: 10px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.member img {
+  width: 265px;
+  height: 265px;
+  padding: 1px;
+  border: 5px solid black;
+  border-radius: 10px;
+}
+.member h4 {
+  font-size: 24px;
+  color: black;
+  margin-bottom: 0;
+}
+.member ul {
+  text-align: left;
+  padding-left: 10px;
+}
+.member li {
+  list-style: none;
+  height: 40px;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+}
+.member li svg {
+  margin-right: 10px;
+  width: 15px;
+}
+.member li::marker {
+}
+@media screen and (max-width: 990px) {
+  .team h1 {
+    font-size: 60px;
+  }
+}
+@media screen and (max-width: 576px) {
+  .team h1 {
+    font-size: 30px;
+  }
+}

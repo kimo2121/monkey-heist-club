@@ -1,0 +1,103 @@
+.counter-button-container {
+  width: fit-content;
+  text-align: center;
+  margin: 0 auto;
+  border-radius: 20px;
+  color: white;
+}
+.inner-btn-group button {
+  border-radius: 30 !important;
+}
+.inner-btn-group button {
+  border-bottom-left-radius: 30px !important;
+  border-top-left-radius: 30px !important;
+  border-top-right-radius: 30px !important;
+  border-bottom-right-radius: 30px !important;
+  margin: 5px;
+}
+
+.mint-component {
+  margin: 0 auto;
+  width: fit-content;
+  border-radius: 20px;
+  display: flex;
+  padding: 13px 3px;
+  box-sizing: border-box;
+  flex-direction: column;
+  align-items: center;
+  background-color: black;
+  width: 651px;
+  height: 288px;
+  border-radius: 20px;
+  margin-top: 30px;
+}
+.counter-button-container p {
+  margin-top: 0;
+}
+.counter-button-container h1 {
+  margin: 0;
+}
+.counter-div {
+  width: fit-content;
+  padding: 10px 20px;
+  margin: 2vh auto;
+  color: white;
+  font-size: 1.6vmax;
+  border-radius: 10px;
+}
+.quantity-address {
+  text-align: left;
+  width: 100%;
+  font-size: 16px;
+  margin: 0;
+}
+
+.MuiSelect-outlined.MuiSelect-outlined {
+  border: 1px solid rgba(255, 255, 255, 0.781);
+  z-index: 100;
+}
+.MuiInputLabel-outlined {
+  color: rgba(255, 255, 255, 0.781) !important;
+}
+.MuiFormLabel-root.Mui-focused {
+  color: #3f51b5 !important;
+}
+.MuiSelect-outlined.MuiSelect-outlined:focus {
+  border: 1px solid transparent;
+}
+.connect-wallet {
+  color: black;
+  background-color: white;
+  font-weight: 700;
+  padding: 10px 20px;
+  font-size: 14px;
+  outline: none;
+  margin-top: 45px;
+  border: none;
+  border-radius: 30px;
+}
+.inner-btn-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btn-group {
+  display: flex;
+  justify-content: center;
+  margin-top: 2vh;
+}
+@media only screen and (max-width: 1024px) {
+  .counter-button-container h1 {
+    font-size: 25px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .mint-component {
+    width: 540px;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .mint-component {
+    width: 340px;
+  }
+}

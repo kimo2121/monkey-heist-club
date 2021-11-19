@@ -1,38 +1,66 @@
 .App {
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App p,
+.App a,
+.App button,
+.App li {
+  font-family: "Ubuntu", sans-serif;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.App h1,
+.App h2,
+.App h3,
+.App h4,
+.App h5 {
+  font-family: "Magra", sans-serif;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.footer {
+  background-image: url(/src/assets/backgroundbanana-min.png);
+  height: 146px;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat no-repeat;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  margin-top: 50px;
 }
-
-.App-link {
-  color: #61dafb;
+.footer img {
+  width: 40px;
+  height: 40px;
+  margin: 5px;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.embed-responsive-item {
+  width: 100% !important;
+  height: 100% !important;
+}
+.video {
+  width: 1140px;
+  height: 600px;
+  margin: 30px auto;
+}
+@media screen and (max-width: 1200px) {
+  .video,
+  .embed-responsive-item {
+    width: 940px;
+    height: 600px;
   }
-  to {
-    transform: rotate(360deg);
+}
+@media screen and (max-width: 950px) {
+  .video {
+    width: 740px;
+    height: 600px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .video {
+    width: 540px;
+    height: 600px;
+  }
+}
+@media screen and (max-width: 576px) {
+  .video {
+    width: 340px;
+    height: 300px;
   }
 }

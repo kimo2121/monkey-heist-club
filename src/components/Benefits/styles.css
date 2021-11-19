@@ -1,0 +1,51 @@
+.benfits img {
+  height: 425px;
+  width: 570px;
+}
+.holders {
+  height: 425px;
+  width: 570px;
+  padding: 0px 30px;
+  background-color: black;
+  box-sizing: border-box;
+}
+.holders h2 {
+  color: white;
+  font-size: 48px;
+}
+.holders h3 {
+  font-size: 30px;
+  font-weight: normal;
+  margin: 0;
+  color: white;
+}
+.benfits {
+  display: flex;
+  background-image: url(/src/assets/background-min1.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 594px;
+}
+@media screen and (max-width: 1200px) {
+  .benfits img {
+    height: 455px;
+    width: 470px;
+  }
+  .holders {
+    width: 470px;
+    height: 455px;
+  }
+  .holders h2 {
+    /* margin: 0; */
+    font-size: 40px;
+  }
+}
+@media screen and (max-width: 990px) {
+  .benfits {
+    display: none;
+  }
+}
