@@ -6,25 +6,27 @@
 }
 .welcome-text h2 {
   font-size: 36px;
+  margin-bottom: 0;
 }
 .welcome-text p {
   font-size: 20px;
   margin: 0;
+  margin-top: 10px;
   font-weight: 700;
 }
 .welcome-text {
   padding: 30px 50px;
   width: 570px;
   box-sizing: border-box;
-  height: 570px;
+  height: 527px;
   background-color: white;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 .welcome img {
   width: 570px;
-  height: 570px;
+  height: 527px;
 }
 .welcome-btn {
   width: 136px;
