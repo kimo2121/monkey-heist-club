@@ -1,6 +1,8 @@
 import React from "react";
 import "./styles.css";
 import img3 from "../../assets/img3.png";
+import { Link } from "react-scroll";
+
 const Welcome = () => {
   return (
     <div className="welcome">
@@ -14,7 +16,9 @@ const Welcome = () => {
           <p>Launching 21. November 7PM EST</p>
           <span>Every monkey is animated :)</span>
         </div>
-        <button className="welcome-btn">Mint</button>
+        <Link smooth={true} duration={800} to="Mint" className="welcome-btn">
+          Mint
+        </Link>
       </div>
     </div>
   );

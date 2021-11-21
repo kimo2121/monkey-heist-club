@@ -57,6 +57,7 @@
 .slide-menu a {
   margin: 7px 0;
   font-weight: 500;
+  color: white;
 }
 .mob-nav {
   display: none;

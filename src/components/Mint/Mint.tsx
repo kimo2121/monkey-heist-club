@@ -5,6 +5,12 @@ import ButtonGroup from "@material-ui/core/ButtonGroup";
 import Button from "@material-ui/core/Button";
 import AddIcon from "@material-ui/icons/Add";
 import RemoveIcon from "@material-ui/icons/Remove";
+import useAuth from "../../hooks/useAuth";
+import toast from "react-hot-toast";
+import { getEngineInfo, purchase } from "../../utils/contracts";
+import { useWeb3React } from "@web3-react/core";
+import { NFTMintEngineDetail } from "../../utils/typs";
+import { truncateWalletString } from "../../utils";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -56,6 +62,46 @@ const useStyles = makeStyles((theme: Theme) =>
 const Mint: React.FC = () => {
   const classes = useStyles();
   const [count, setCount] = React.useState(1);
+
+  const { login } = useAuth();
+  const [loginStatus, setLoginStatus] = useState(false);
+
+  const loginMetaMask = () => {
+    login(1);
+  };
+
+  const [mintEngineDetail, setMintEngineDetail] =
+    useState<NFTMintEngineDetail>();
+  const { connector, library, chainId, account, active } = useWeb3React();
+  useEffect(() => {
+    getEngineInfo(chainId, library).then((nftMintEngineDetail: any) => {
+      setMintEngineDetail(nftMintEngineDetail);
+    });
+  }, [connector, library, account, active, chainId]);
+
+  const mintTokens = async () => {
+    if (count <= 0) {
+      toast.error("Mint Count should be over than 0");
+      return;
+    }
+    const load_toast_id = toast.loading("Plesae wait for Mint...");
+    try {
+      const bSuccess = await purchase(chainId, library.getSigner(), count);
+      if (bSuccess) {
+        toast.success("Mint Success!");
+
+        setTimeout(() => {
+          window.location.reload();
+        }, 3000);
+      } else {
+        toast.error("Mint Failed!");
+      }
+    } catch (error) {
+      toast.error("Mint Failed!");
+    }
+    toast.dismiss(load_toast_id);
+  };
+
   return (
     <div className="mint-component">
       <div className="counter-button-container">
@@ -98,7 +144,7 @@ const Mint: React.FC = () => {
                 onClick={() => {
                   setCount(count + 1);
                 }}
-                disabled={count === 25}
+                disabled={count === (mintEngineDetail?.purchaseLimit || 20)}
               >
                 <AddIcon
                   style={{
@@ -116,11 +162,15 @@ const Mint: React.FC = () => {
             root: classes.rootButton,
             label: classes.label,
           }}
+          onClick={mintTokens}
         >
           MINT
         </Button>
         <br />
-        <button className="connect-wallet">CONNECT WALLET</button>
+        <button onClick={loginMetaMask} className="connect-wallet">
+          {" "}
+          {loginStatus ? truncateWalletString(account) : "CONNECT WALLET"}
+        </button>
         <div
           style={{
             padding: "7px",
@@ -133,7 +183,9 @@ const Mint: React.FC = () => {
             backgroundColor: "white",
           }}
         >
-          <span> {count * 0.049} ETH PER MINT</span>
+          <span>
+            {mintEngineDetail?.mintPrice || count * 0.049} ETH PER MINT
+          </span>
         </div>
       </div>
     </div>
